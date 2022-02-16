@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `sales` (
   `product_id` varchar(50) NOT NULL,
   `customer_name` varchar(50) NOT NULL,
   `customer_mail` varchar(50) NOT NULL,
-  `product_name` varchar(50) NOT NULL,
+  `product_name` varchar(500) NOT NULL,
   `product_price` decimal(20,2) NOT NULL,
   `sale_date` datetime NOT NULL,
   `status` enum('Y','N') NOT NULL DEFAULT 'Y',
@@ -30,17 +30,18 @@ CREATE TABLE IF NOT EXISTS `sales` (
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table sales.sales: ~0 rows (approximately)
+-- Dumping data for table sales.sales: ~5 rows (approximately)
 DELETE FROM `sales`;
 INSERT INTO `sales` (`id`, `sale_id`, `product_id`, `customer_name`, `customer_mail`, `product_name`, `product_price`, `sale_date`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-	(1, 1, '1', 'Reto Fanzen', 'reto.fanzen@no-reply.rexx-systems.com', 'Refactoring: Improving the Design of Existing Code', 49.99, '2019-04-02 08:05:12', 'Y', '2022-02-16 18:08:30', '2022-02-16 18:08:30', NULL),
-	(2, 2, '2', 'Reto Fanzen', 'reto.fanzen@no-reply.rexx-systems.com', 'Clean Architecture: A Craftsman\'s Guide to Softwar', 24.99, '2019-05-01 11:07:18', 'Y', '2022-02-16 18:08:30', '2022-02-16 18:08:30', NULL),
-	(3, 3, '2', 'Leandro Bußmann', 'leandro.bussmann@no-reply.rexx-systems.com', 'Clean Architecture: A Craftsman\'s Guide to Softwar', 19.99, '2019-05-06 14:26:14', 'Y', '2022-02-16 18:08:30', '2022-02-16 18:08:30', NULL),
-	(4, 4, '1', 'Hans Schäfer', 'hans.schaefer@no-reply.rexx-systems.com', 'Refactoring: Improving the Design of Existing Code', 37.98, '2019-06-07 11:38:39', 'Y', '2022-02-16 18:08:30', '2022-02-16 18:08:30', NULL),
-	(5, 5, '1', 'Mia Wyss', 'mia.wyss@no-reply.rexx-systems.com', 'Refactoring: Improving the Design of Existing Code', 37.98, '2019-07-01 15:01:13', 'Y', '2022-02-16 18:08:31', '2022-02-16 18:08:31', NULL),
-	(6, 6, '2', 'Mia Wyss', 'mia.wyss@no-reply.rexx-systems.com', 'Clean Architecture: A Craftsman\'s Guide to Softwar', 19.99, '2019-08-07 19:08:56', 'Y', '2022-02-16 18:08:31', '2022-02-16 18:08:31', NULL);
+	(1, 1, '1', 'Reto Fanzen', 'reto.fanzen@no-reply.rexx-systems.com', 'Refactoring: Improving the Design of Existing Code', 49.99, '2019-04-02 08:05:12', 'Y', '2022-02-16 18:23:06', '2022-02-16 18:23:06', NULL),
+	(2, 2, '2', 'Reto Fanzen', 'reto.fanzen@no-reply.rexx-systems.com', 'Clean Architecture: A Craftsman\'s Guide to Softwar', 24.99, '2019-05-01 11:07:18', 'Y', '2022-02-16 18:23:06', '2022-02-16 18:23:06', NULL),
+	(3, 3, '2', 'Leandro Bußmann', 'leandro.bussmann@no-reply.rexx-systems.com', 'Clean Architecture: A Craftsman\'s Guide to Softwar', 19.99, '2019-05-06 14:26:14', 'Y', '2022-02-16 18:23:06', '2022-02-16 18:23:06', NULL),
+	(4, 4, '1', 'Hans Schäfer', 'hans.schaefer@no-reply.rexx-systems.com', 'Refactoring: Improving the Design of Existing Code', 37.98, '2019-06-07 11:38:39', 'Y', '2022-02-16 18:23:06', '2022-02-16 18:23:06', NULL),
+	(5, 5, '1', 'Mia Wyss', 'mia.wyss@no-reply.rexx-systems.com', 'Refactoring: Improving the Design of Existing Code', 37.98, '2019-07-01 15:01:13', 'Y', '2022-02-16 18:23:07', '2022-02-16 18:23:07', NULL),
+	(6, 6, '2', 'Mia Wyss', 'mia.wyss@no-reply.rexx-systems.com', 'Clean Architecture: A Craftsman\'s Guide to Softwar', 19.99, '2019-08-07 19:08:56', 'Y', '2022-02-16 18:23:07', '2022-02-16 18:23:07', NULL),
+	(7, 1, '1', 'Reto Fanzen', 'reto.fanzen@no-reply.rexx-systems.com', 'Refactoring: Improving the Design of Existing Code', 49.99, '2019-04-02 08:05:12', 'Y', '2022-02-16 18:40:02', '2022-02-16 18:40:02', NULL);
 
 -- Dumping structure for table sales.users
 DROP TABLE IF EXISTS `users`;
